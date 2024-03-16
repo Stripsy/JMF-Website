@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <form role="form" action="/admin/groupes/update/{{groupe.idgroupe}}" method="post">
+                    <div class="form-group">
+                        <h4>Edition du groupe</h4><br><br>
+                        <label for="exampleInputEmail1">
+                            Nom du groupe
+                        </label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="{{groupe.titre}}"
+                            required name="titre" id="titre" />
+                        <label for="exampleInputEmail1">
+                            Lien de l'image
+                        </label>
+                        <textarea type="texte" class="form-control" id="exampleInputEmail1" required name="image"
+                            id="image" />{{groupe.image}}</textarea>
+                        <label for="exampleInputEmail1">
+                            Texte
+                        </label>
+                        <textarea type="text" class="form-control" id="exampleInputEmail1" required name="texte"
+                            maxlength="800" id="texte" />{{groupe.texte}}</textarea>
+                        <label for="exampleInputEmail1">
+                            Duree
+                        </label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="{{groupe.duree}}"
+                            required name="duree" id="duree" />
+                        <label for="exampleInputEmail1">
+                            Type
+                        </label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="{{groupe.type}}" required
+                            name="type" id="type" />
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Modifier
+                    </button>
+                </form>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+</div>

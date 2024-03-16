@@ -1,0 +1,50 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Slygeen/Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Slygeen/Website/issues"
+  },
+  "homepage": "https://github.com/Slygeen/Website#readme",
+  "dependencies": {
+    "@admin-bro/express": "^3.1.0",
+    "@admin-bro/sequelize": "^1.2.1",
+    "@adminjs/express": "^4.0.1",
+    "admin-bro": "^4.0.1",
+    "admin-bro-expressjs": "^2.1.1",
+    "adminjs": "^5.5.1",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "express-flash": "^0.0.2",
+    "express-flash-message": "^2.1.0",
+    "express-handlebars": "^6.0.2",
+    "express-rate-limit": "^6.2.0",
+    "express-session": "^1.17.2",
+    "googleapis": "^92.0.0",
+    "install": "^0.13.0",
+    "moment": "^2.29.1",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.2",
+    "react": "^16.13.1",
+    "sequelize": "^6.15.0",
+    "sequelize-cli": "^6.4.1",
+    "sweetalert": "^2.1.2",
+    "tarteaucitronjs": "^1.9.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

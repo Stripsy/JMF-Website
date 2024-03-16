@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <form role="form" action="/admin/evenements/add" method="post">
+                    <div class="form-group">
+                        <h4>Ajout d'un événement au calendrier</h4><br><br>
+                        <label for="exampleInputEmail1">
+                            Nom de l'even.
+                        </label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" required name="nom" id="nom" />
+                        <label for="exampleInputEmail1">
+                            Date Even.
+                        </label>
+                        <input type="datetime-local" class="form-control" id="exampleInputEmail1" required
+                            name="dateevenement" id="dateevenement" />
+                        <label for="exampleInputEmail1">
+                            Adresse
+                        </label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" required name="adresse"
+                            id="adresse" />
+                        <label for="exampleInputEmail1">
+                            Ville
+                        </label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" required name="ville"
+                            id="ville" />
+                        <label for="exampleInputEmail1">
+                            Code Postal
+                        </label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" required maxlength="5" name="cp"
+                            id="cp" />
+                        <label for="exampleInputEmail1">
+                            Résumé
+                        </label>
+                        <textarea type="textarea" class="form-control" id="exampleInputEmail1" required maxlength="300"
+                            name="resume" id="resume" /></textarea><br>
+                        <select name="groupe" id="groupe">
+                            <option value="">- Choix du groupe -</option>
+                            {{#each groupe}}
+                            <option value="{{this.idgroupe}}">{{this.titre}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">
+                        Ajouter
+                    </button>
+                </form>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+</div>

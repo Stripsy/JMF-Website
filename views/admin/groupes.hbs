@@ -1,0 +1,73 @@
+<style>
+  p {
+    display: -webkit-box;
+    max-width: 350px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  p2 {
+    display: -webkit-box;
+    max-width: 350px;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+
+<div class="container">
+  <h2>Groupes</h2><a href="/admin/groupes/add"><button type="button" class="btn btn-success">Ajouter un
+      groupe</button></a>
+  <hr>
+  {{#if messages.addgroupe}}
+  <div class="alert alert-success" role="alert">
+    {{messages.addgroupe}}
+  </div>
+  {{/if}}
+  {{#if messages.editgroupe}}
+  <div class="alert alert-success" role="alert">
+    {{messages.editgroupe}}
+  </div>
+  {{/if}}
+  {{#if messages.deletegroupe}}
+  <div class="alert alert-success" role="alert">
+    {{messages.deletegroupe}}
+  </div>
+  {{/if}}
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Titre</th>
+        <th scope="col">Illustration</th>
+        <th scope="col">Texte</th>
+        <th scope="col">Duree en min.</th>
+        <th scope="col">Type</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each groupes}}
+      <tr>
+        <th scope="row">{{this.titre}}</th>
+        <td>
+          <p2>{{this.image}}</p2>
+        </td>
+        <td>
+          <p>{{this.texte}}</p>
+        </td>
+        <td>{{this.duree}}</td>
+        <td>{{this.type}}</td>
+        <td>
+          <a href="/admin/groupes/edit/{{this.idgroupe}}"><button type="button"
+              class="btn btn-primary">Editer</button></a>
+          <a href="/admin/groupes/delete/{{this.idgroupe}}"><button type="button"
+              class="btn btn-danger">Supprimer</button></a>
+        </td>
+      </tr>
+      {{/each}}
+      <tr></tr>
+
+    </tbody>
+  </table>
+</div>

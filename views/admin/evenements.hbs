@@ -1,0 +1,75 @@
+<style>
+  p {
+    display: -webkit-box;
+    max-width: 350px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+
+<div class="container">
+  <h2>Evenements</h2>
+  <a href="/admin/evenements/add">
+    <button type="button" class="btn btn-success">Ajouter un événement</button></a>
+  <hr>
+  {{#if messages.addeventdb}}
+  <div class="alert alert-danger" role="alert">
+    {{messages.addeventdb}}
+  </div>
+  {{/if}}
+  {{#if messages.addeventgc}}
+  <div class="alert alert-danger" role="alert">
+    {{messages.addeventgc}}
+  </div>
+  {{/if}}
+  {{#if messages.addeventsuccess}}
+  <div class="alert alert-success" role="alert">
+    {{messages.addeventsuccess}}
+  </div>
+  {{/if}}
+  {{#if messages.editevent}}
+  <div class="alert alert-success" role="alert">
+    {{messages.editevent}}
+  </div>
+  {{/if}}
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Nom de l'even.</th>
+        <th scope="col">Date Even.</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Ville</th>
+        <th scope="col">Code Postal</th>
+        <th scope="col">Résumé</th>
+        <th scope="col">Groupe</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each evenements}}
+      <tr>
+        <th scope="row">{{this.nom}}</th>
+        <td>{{dateFormat this.dateevenement}}</td>
+        <td>{{this.adresse}}</td>
+        <td>{{this.ville}}</td>
+        <td>{{this.cp}}</td>
+        <td>
+          <p>{{this.resume}}</p>
+        </td>
+        <td>{{this.Groupe.titre}}</td>
+        <td>
+
+          <a href="/admin/evenements/edit/{{this.idevenement}}"><button type="button"
+              class="btn btn-primary">Editer</button></a>
+          <a href="/admin/evenements/delete/{{this.idevenement}}"><button type="button"
+              class="btn btn-danger">Supprimer</button></a>
+          <a href="/admin/evenements/participants/{{this.idevenement}}"><button type="button"
+              class="btn btn-warning">Voir participants</button></a>
+        </td>
+      </tr>
+      {{/each}}
+      <tr></tr>
+    </tbody>
+  </table>
+</div>

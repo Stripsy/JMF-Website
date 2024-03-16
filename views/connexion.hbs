@@ -1,0 +1,72 @@
+<br><br>
+<div class="container">
+    <div class="row justify-content-center">
+        <center>
+            <h1>Se connecter</h1>
+        </center>
+    </div>
+    <hr><br>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                {{#if messages.info}}
+                <div class="alert alert-danger" role="alert">
+                    {{messages.info}}
+                </div>
+                {{/if}}
+                {{#if messages.inscription}}
+                <div class="alert alert-success" role="alert">
+                    {{messages.inscription}}
+                </div>
+                {{/if}}
+                <div class="card-body">
+
+                    <form class="form-horizontal" method="post" action="connexion">
+
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="email" class="cols-sm-2 control-label">Email</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-envelope fa"
+                                                aria-hidden="true"></i></span>
+                                        <input type="email" class="form-control" name="email" id="email"
+                                            placeholder="Entrez votre email" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="cols-sm-2 control-label">Mot de passe</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock fa-lg"
+                                                aria-hidden="true"></i></span>
+                                        <input type="password" class="form-control" name="password" id="password"
+                                            placeholder="Entrez votre mot de passe" required />
+                                    </div><br>
+                                    Pas de compte ? <a href="inscription">S'inscrire</a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+
+                        <center>
+                            <div class="form-group center  ">
+                                <button type="submit" class="btn   btn-lg" style="background-color: #ff173e">Se
+                                    connecter</button>
+
+                            </div>
+                        </center>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div><br><br><br><br><br><br><br><br><br><br><br>
+<script>
+    const user = "{{session.nom}}";
+    if (user)
+        window.location = "/";
+</script>

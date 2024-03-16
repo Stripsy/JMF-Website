@@ -1,0 +1,50 @@
+<style>
+  p {
+    display: -webkit-box;
+    max-width: 350px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+
+
+<br>
+
+<div class="container">
+  <center>
+    <h1>Tous nos spectacles</h1>
+  </center>
+  <hr>
+  {{#if messages.addparticipant}}
+  <div class="alert alert-success" role="alert">
+    {{messages.addparticipant}}
+  </div>
+  {{/if}}
+  {{#if messages.failparticipant}}
+  <div class="alert alert-danger" role="alert">
+    {{messages.failparticipant}}
+  </div>
+  {{/if}}
+  <div class="row">
+    {{#each spectacles}}
+    <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+      <div class="card">
+        <img class="card-img" src="{{this.image}}" alt="Bologna">
+        <div class="card-body">
+          <h4 class="card-title">{{this.titre}}</h4>
+          <small class="text-muted cat">
+            <i class="far fa-clock text-info"></i> Durée : {{this.duree}} minutes
+          </small>
+          <p class="card-text" maxlength="80">{{this.texte}}</p>
+          <a href="spectacles/groupe/{{this.idgroupe}}" id="fiche" class="btn btn-danger">Voir la fiche spectacle</a>
+        </div>
+        <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
+          <div class="views">Type : {{this.type}}
+          </div>
+        </div>
+      </div><br>
+    </div>
+    {{/each}}
+  </div><br>
+</div>
